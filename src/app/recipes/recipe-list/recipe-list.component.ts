@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Recipe } from '../recipe.module';
 
 @Component({
@@ -7,10 +7,12 @@ import { Recipe } from '../recipe.module';
   styleUrls: ['./recipe-list.component.css'],
 })
 export class RecipeListComponent {
+  @Output() selectedrecipe = new EventEmitter();
+
   recipes: Recipe[] = [
     new Recipe(
-      'recipename',
-      'recipedesc',
+      'pizza',
+      'fastfood recipe',
       'https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg'
     ),
     new Recipe(
@@ -19,4 +21,8 @@ export class RecipeListComponent {
       'https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg'
     ),
   ];
+
+  sendtorecipe(recipein: Recipe) {
+    this.selectedrecipe.emit(recipein);
+  }
 }

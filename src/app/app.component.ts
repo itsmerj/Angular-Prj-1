@@ -1,6 +1,4 @@
 import { Component } from "@angular/core";
-import { Recipe } from "./recipes/recipe.module";
-
 @Component({
   selector: "app-root",
   templateUrl: "./app.component.html",
@@ -11,5 +9,6 @@ export class AppComponent {
 
   feature(feature: string) {
     this.fetureLoad = feature;
+    console.log(feature);
   }
 }

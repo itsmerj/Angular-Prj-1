@@ -11,6 +11,5 @@ export class AppComponent {
 
   feature(feature: string) {
     this.fetureLoad = feature;
-    console.log(feature);
   }
 }
